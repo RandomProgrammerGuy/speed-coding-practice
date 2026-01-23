@@ -8,13 +8,13 @@ This repository includes small programs that I have made in a short timeframe to
 
 ### QuickTests
 
-![Static Badge](https://img.shields.io/badge/status-not_started?style=for-the-badge&color=f9ed00)
+![Static Badge](https://img.shields.io/badge/status-not_yet_started-yellow?style=for-the-badge)
 
 A simple, no-frills testing framework in Java
 
 ### CLCorrect
 
-![Static Badge](https://img.shields.io/badge/status-not_started?style=for-the-badge&color=f9ed00)
+![Static Badge](https://img.shields.io/badge/status-not_yet_started-yellow?style=for-the-badge)
 
 A command line tool that corrects text in the terminal
 
@@ -22,7 +22,7 @@ A command line tool that corrects text in the terminal
 
 ### CSV Master
 
-![Static Badge](https://img.shields.io/badge/status-not_started?style=for-the-badge&color=f9ed00)
+![Static Badge](https://img.shields.io/badge/status-not_yet_started-yellow?style=for-the-badge)
 
 A CLI-based CSV spreadsheet manager
 
@@ -30,6 +30,6 @@ A CLI-based CSV spreadsheet manager
 
 ### Lightiary
 
-![Static Badge](https://img.shields.io/badge/status-not_started?style=for-the-badge&color=f9ed00)
+![Static Badge](https://img.shields.io/badge/status-not_yet_started-yellow?style=for-the-badge)
 
 A minimal, lightweight diary application that allows users to add, edit and store diary entries.
