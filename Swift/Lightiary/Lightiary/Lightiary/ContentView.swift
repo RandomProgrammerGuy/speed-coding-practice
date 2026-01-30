@@ -10,16 +10,21 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var entries: [Entry]
 
     var body: some View {
+        VStack {
+            Text("Welcome to").font(.system(size:24, weight: .light, design: .serif)).multilineTextAlignment(.leading)
+            Text("Lightiary").font(.system(size:48, weight: .black, design: .serif)).multilineTextAlignment(.leading)
+        } .padding(EdgeInsets(top: 50, leading: 0, bottom: 30, trailing: 0))
+        
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(entries) { entry in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text("New diary entry at \(entry.date_created, format: Date.FormatStyle(date: .numeric, time: .standard))").font(.system(.body, design: .serif))
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(entry.date_created, format: Date.FormatStyle(date: .numeric, time: .standard))
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -29,27 +34,28 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: addEntry) {
+                        Label("Add Entry", systemImage: "plus")
                     }
                 }
-            }
+            }.font(.system(.body, design: .serif))
+
         } detail: {
-            Text("Select an item")
+            Text("Select an entry")
         }
     }
 
-    private func addItem() {
+    private func addEntry() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            let newEntry = Entry(current_date: Date())
+            modelContext.insert(newEntry)
         }
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(entries[index])
             }
         }
     }
@@ -57,5 +63,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Entry.self, inMemory: true)
 }
