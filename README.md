@@ -36,7 +36,7 @@ A rich binary tree library in Rust
 
 ### Lightiary
 
-![Static Badge](https://img.shields.io/badge/status-not_yet_started-yellow?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/status-in_progress-orange?style=for-the-badge)
 
 A minimal, lightweight diary application that allows users to add, edit and store diary entries.
 
